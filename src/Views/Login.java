@@ -1,3 +1,5 @@
+package Views;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,9 +10,14 @@ import java.util.Map;
 
 public class Login extends JFrame implements ActionListener {
 
-    JFrame dashboard;
+    JFrame recepcionistaview;
 
     JPanel LoginPanel = new JPanel();
+
+    JLabel LabelTitulo = new JLabel("OdontoClinic");
+
+    ImageIcon image = new ImageIcon(new ImageIcon("src/Views/assets/login_welcome.jpg").getImage().getScaledInstance(575, 480, Image.SCALE_DEFAULT));
+    JLabel LabelImagen = new JLabel(image);
 
     JLabel LabelUser = new JLabel("Usuario: ");
     JLabel LabelPassword = new JLabel("Contraseña: ");
@@ -20,70 +27,113 @@ public class Login extends JFrame implements ActionListener {
 
     JButton ButtonAttemp = new JButton("Iniciar Sesión");
 
-
-    Login () {
+    Login() {
         super("Iniciar sesión");
-        setSize(300, 200);
+        setSize(850, 480);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
 
         ButtonAttemp.addActionListener(this);
-        ButtonAttemp.setToolTipText("Registrar trabajador");
 
         LoginPanel.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
+        Insets inset = new Insets(50, 10, 20, 10);
+
+        String fontname = LabelTitulo.getFont().getName();
+        LabelTitulo.setFont(new Font(fontname, Font.BOLD, 20));
+
         c.gridx = 0;
         c.gridy = 0;
-        c.weightx = 1;
-        c.weighty = 1;
-        LoginPanel.add(LabelUser, c);
+        c.insets = inset;
+        LoginPanel.add(LabelTitulo, c);
+
+        inset = new Insets(0, 0, 0, 0);
 
         c.gridx = 1;
         c.gridy = 0;
+        c.gridheight = 6;
+        c.insets = inset;
+        c.fill = GridBagConstraints.BOTH;
+        LoginPanel.add(LabelImagen, c);
+
+        inset = new Insets(180, 10, 5, 10);
+
+        c.gridx = 0;
+        c.gridy = 1;
+        c.gridheight = 1;
+        c.insets = inset;
+        c.fill = GridBagConstraints.NONE;
+        c.weightx = 0.1;
+        c.weighty = 0.1;
+        LoginPanel.add(LabelUser, c);
+
+        inset = new Insets(5, 30, 5, 30);
+        c.gridx = 0;
+        c.gridy = 2;
+        c.insets = inset;
+        c.fill = GridBagConstraints.HORIZONTAL;
         LoginPanel.add(FieldUser, c);
 
         c.gridx = 0;
-        c.gridy = 1;
+        c.gridy = 3;
+        c.insets = inset;
+        c.fill = GridBagConstraints.NONE;
         LoginPanel.add(LabelPassword, c);
 
-        c.gridx = 1;
-        c.gridy = 1;
+        c.gridx = 0;
+        c.gridy = 4;
+        c.insets = inset;
+        c.fill = GridBagConstraints.HORIZONTAL;
         LoginPanel.add(FieldPassword, c);
 
+        FieldPassword.addActionListener(this);
+
+        inset = new Insets(5, 30, 50, 30);
+
+        c.insets = inset;
         c.gridx = 0;
-        c.gridy = 2;
-        c.gridwidth = 2;
+        c.gridy = 5;
+        c.fill = GridBagConstraints.NONE;
         LoginPanel.add(ButtonAttemp, c);
 
         setContentPane(LoginPanel);
     }
+
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         Object Objecto = actionEvent.getSource();
 
         if (Objecto == ButtonAttemp) {
-            try {
-                this.createUser("alfredo", "123456");
-                this.createUser("root", "root");
-
-                boolean response = this.attempLogin();
-
-                if (response) {
-                    // Borrar Login Frame
-                    this.dispose();
-
-                    // Abrir Dashboard Frame
-                    dashboard = new Dashboard();
-                    dashboard.setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(LoginPanel, "Estas credenciales no existen, intente de nuevo");
-                }
-
-            } catch (Exception ignored) { }
+            this.login();
+        } if (Objecto == FieldPassword) {
+            this.login();
         }
         repaint();
     }
+
+    private void login() {
+        try {
+
+            boolean response = this.attempLogin();
+
+            if (response) {
+                // Borrar Views.Login Frame
+                this.dispose();
+
+                // Abrir Views.Dashboard Frame
+                recepcionistaview = new RecepcionistaView();
+                recepcionistaview.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(LoginPanel, "Estas credenciales no existen, intente de nuevo");
+            }
+
+        } catch (Exception ignored) {
+        }
+    }
+
 
     private void createUser(String username, String password) {
 
@@ -157,7 +207,7 @@ public class Login extends JFrame implements ActionListener {
         // Intento de login
         String[] user = {username, password};
 
-        for (Map.Entry<Integer,String[]> entry : users.entrySet()) {
+        for (Map.Entry<Integer, String[]> entry : users.entrySet()) {
             if (entry.getValue()[0].equals(user[0]) && entry.getValue()[1].equals(user[1])) {
                 return true;
             }
