@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Unidad_1:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="89579294-76f8-478f-a012-452191ff780a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Consulta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Trabajadores.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/DuenoView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/login_welcome.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/usuarios.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Unidad_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/citas.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clientes.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Cita.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Trabajador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/Montserrat-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/Montserrat-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/arrow-left-solid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/arrow-right-solid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/brand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/documents.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/dog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/employees.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/assets/money.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trabajadores.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RecepcionistaView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Model/Consulta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Model/Trabajadores.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Views/DuenoView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Views/DuenoView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Views/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Views/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Views/RecepcionistaView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Views/RecepcionistaView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Consulta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Trabajadores.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/DuenoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DuenoView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/RecepcionistaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RecepcionistaView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios.obj" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.obj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +71,22 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Views/assets" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kazuk\IdeaProjects\unidad-1\src\Views\assets" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Kazuk\IdeaProjects\unidad-1\src\Views\assets" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JAR Application.Unidad_1.jar">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Views.Login" />
       <module name="Unidad_1" />
@@ -59,8 +94,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Unidad_1.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Unidad_1_jar/Unidad_1.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.Unidad_1.jar" />
         <item itemvalue="Application.Login" />
       </list>
     </recent_temporary>
@@ -94,33 +134,81 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582388914108">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="436" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1582388914108" />
+    <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser" timestamp="1582684263319">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="64" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1582684263319" />
+    <state x="434" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1582779307495">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="434" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1582779307495" />
     <state x="531" y="252" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582063841283">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="531" y="252" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1582063841283" />
-    <state width="1323" height="138" key="GridCell.Tab.0.bottom" timestamp="1582307848136">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1582410366303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="138" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582307848136" />
-    <state width="1323" height="138" key="GridCell.Tab.0.center" timestamp="1582307848136">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582410366303" />
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom" timestamp="1582780317405">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="138" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582307848136" />
-    <state width="1323" height="138" key="GridCell.Tab.0.left" timestamp="1582307848134">
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
+    <state width="1323" height="148" key="GridCell.Tab.0.center" timestamp="1582780317405">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="138" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582307848134" />
-    <state width="1323" height="138" key="GridCell.Tab.0.right" timestamp="1582307848136">
+    <state width="1323" height="148" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
+    <state width="1323" height="148" key="GridCell.Tab.0.left" timestamp="1582780317405">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="138" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582307848136" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582301205592">
+    <state width="1323" height="148" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
+    <state width="1323" height="148" key="GridCell.Tab.0.right" timestamp="1582780317405">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582301205592" />
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1582305673743">
+    <state width="1323" height="148" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1582697263177">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1582305673743" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582697263177" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1582697263177">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1582697263177" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1582697263177">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1582697263177" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1582697263177">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1582697263177" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1582779694175">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582779694175" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582755124798">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582755124798" />
+    <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1582560374741">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="101" width="607" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1582560374741" />
+    <state x="65" y="0" key="new project wizard" timestamp="1582650901412">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1582650901412" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1582726881144">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1582726881144" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1582690474326">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1582690474326" />
   </component>
 </project>
