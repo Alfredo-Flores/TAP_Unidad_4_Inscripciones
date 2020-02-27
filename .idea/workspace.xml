@@ -7,40 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89579294-76f8-478f-a012-452191ff780a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Unidad_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/citas.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clientes.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Cita.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Trabajador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/Montserrat-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/Montserrat-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/arrow-left-solid.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/arrow-right-solid.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/brand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/documents.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/dog.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/employees.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/assets/money.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trabajadores.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Model/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Model/Consulta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Model/Trabajadores.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Views/DuenoView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Views/DuenoView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Views/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Views/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Unidad_1/Views/RecepcionistaView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Unidad_1/Views/RecepcionistaView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Consulta.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Trabajadores.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/citas.obj" beforeDir="false" afterPath="$PROJECT_DIR$/citas.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/DuenoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DuenoView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/RecepcionistaView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RecepcionistaView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trabajadores.obj" beforeDir="false" afterPath="$PROJECT_DIR$/trabajadores.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/usuarios.obj" beforeDir="false" afterPath="$PROJECT_DIR$/usuarios.obj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +57,7 @@
       <recent name="C:\Users\Kazuk\IdeaProjects\unidad-1\src\Views\assets" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Unidad_1.jar">
+  <component name="RunManager" selected="Application.Login">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Views.Login" />
       <module name="Unidad_1" />
@@ -100,8 +71,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.Unidad_1.jar" />
         <item itemvalue="Application.Login" />
+        <item itemvalue="JAR Application.Unidad_1.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -154,22 +125,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1582410366303" />
-    <state width="1323" height="148" key="GridCell.Tab.0.bottom" timestamp="1582780317405">
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom" timestamp="1582822595935">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="148" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
-    <state width="1323" height="148" key="GridCell.Tab.0.center" timestamp="1582780317405">
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582822595935" />
+    <state width="1323" height="148" key="GridCell.Tab.0.center" timestamp="1582822595935">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="148" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
-    <state width="1323" height="148" key="GridCell.Tab.0.left" timestamp="1582780317405">
+    <state width="1323" height="148" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582822595935" />
+    <state width="1323" height="148" key="GridCell.Tab.0.left" timestamp="1582822595935">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="148" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
-    <state width="1323" height="148" key="GridCell.Tab.0.right" timestamp="1582780317405">
+    <state width="1323" height="148" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582822595935" />
+    <state width="1323" height="148" key="GridCell.Tab.0.right" timestamp="1582822595935">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="148" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582780317405" />
+    <state width="1323" height="148" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582822595935" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1582697263177">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -190,10 +161,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1582779694175" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582755124798">
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1582819855487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582755124798" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582819855487" />
     <state x="379" y="101" width="607" height="526" key="find.popup" timestamp="1582560374741">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

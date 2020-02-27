@@ -44,7 +44,7 @@ public class RecepcionistaView extends JFrame implements ActionListener {
     JTextField fieldcosto = new JTextField(), fieldsalario = new JTextField();
     String[] anosarray = {"2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"};
     String[] mesesarray = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
-    String[] diasarray = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
+    String[] diasarray = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"};
     String[] horasarray = {"06:00:00", "07:00:00", "08:00:00", "09:00:00", "10:00:00", "11:00:00", "12:00:00", "13:00:00", "14:00:00", "15:00:00", "16:00:00", "17:00:00", "18:00:00", "19:00:00", "20:00:00", "21:00:00", "22:00:00", "23:00:00", "00:00:00", "01:00:00", "02:00:00", "03:00:00", "04:00:00", "05:00:00"};
     String[] especialidades = {"Dentista", "Dentista pediátrico", "Endodoncista", "Cirujano Oral", "Cirujano Maxilofacial", "Ortodoncista", "Periodoncista", "Prostodoncista", "Asistente", "Practicante"};
     DefaultComboBoxModel modeloano = new DefaultComboBoxModel(anosarray), modelomeses = new DefaultComboBoxModel(mesesarray);
@@ -175,7 +175,7 @@ public class RecepcionistaView extends JFrame implements ActionListener {
                     return;
                 }
             }
-            if (Objecto == combomeses) {
+            if (Objecto == combomeses || Objecto == comboano) {
                 refreshComboDias();
             }
         } catch (Exception e) {
@@ -253,6 +253,7 @@ public class RecepcionistaView extends JFrame implements ActionListener {
         this.refreshTablaCitas();
         this.refreshCombos();
         combomeses.addActionListener(this);
+        comboano.addActionListener(this);
         tabla.setFont(sizedFontRegular);
         JScrollPane scrollcitas = new JScrollPane(tabla);
         TitledBorder border = BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Citas", TitledBorder.LEFT, TitledBorder.TOP);
@@ -474,7 +475,7 @@ public class RecepcionistaView extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Ocurrio un error al ver trabajadores");
                 return;
             }
-            newmodelo.addRow(new Object[]{ nombrecliente, nombretrabajador, cita.getProcedimiento(), cita.getCosto(), cita.getFecha().toString()});
+            newmodelo.addRow(new Object[]{ nombrecliente, nombretrabajador, cita.getProcedimiento(), cita.getCosto() +  ".00 $", cita.getFecha().toString()});
         }
         tabla.setModel(newmodelo);  tabla.setRowSelectionAllowed(false);
         tabla.setColumnSelectionAllowed(false); tabla.getTableHeader().setReorderingAllowed(false);
@@ -763,7 +764,13 @@ public class RecepcionistaView extends JFrame implements ActionListener {
         String[] mesnon = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"};
         switch (mes) {
             case "Enero": combodias.setModel(new DefaultComboBoxModel(mesnon)); break;
-            case "Febrero": combodias.setModel(new DefaultComboBoxModel(mespar)); break;
+            case "Febrero":
+                if (ano.equals("2020") || ano.equals("2024") || ano.equals("2028")) {
+                    combodias.setModel(new DefaultComboBoxModel(mesbisiesto));
+                } else {
+                    combodias.setModel(new DefaultComboBoxModel(mespar));
+                }
+                break;
             case "Marzo": combodias.setModel(new DefaultComboBoxModel(mesnon)); break;
             case "Abril": combodias.setModel(new DefaultComboBoxModel(mespar)); break;
             case "Mayo": combodias.setModel(new DefaultComboBoxModel(mesnon)); break;

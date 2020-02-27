@@ -460,7 +460,7 @@ public class DuenoView extends JFrame implements ActionListener {
                 return false;
             }
         };
-        titulos = new String[]{"Nombre Completo", "Telefono", "Dirección", "Salario"};
+        titulos = new String[]{"Nombre Completo", "Telefono", "Dirección", "Salario", "Especilidad / Rol"};
         DefaultTableModel newmodelotrabajadores = new DefaultTableModel(data, titulos) {
             public boolean isCellEditable(int row, int column)
             {
@@ -507,7 +507,7 @@ public class DuenoView extends JFrame implements ActionListener {
         Trabajador trabajador;
         for (Map.Entry<Integer, Trabajador> entry : trabajadores.entrySet()) {
             trabajador = entry.getValue();
-            newmodelotrabajadores.addRow(new Object[]{ trabajador.getNombre() +  " " + trabajador.getApellidopaterno() + " " + trabajador.getApellidomaterno(), trabajador.getTelefono(), trabajador.getDireccion(), trabajador.getSalario(), "Ver Citas"});
+            newmodelotrabajadores.addRow(new Object[]{ trabajador.getNombre() +  " " + trabajador.getApellidopaterno() + " " + trabajador.getApellidomaterno(), trabajador.getTelefono(), trabajador.getDireccion(), trabajador.getSalario(), trabajador.getTipo()});
         }
 
         Cita cita;
