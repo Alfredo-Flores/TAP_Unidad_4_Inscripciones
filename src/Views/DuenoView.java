@@ -250,13 +250,13 @@ public class DuenoView extends JFrame implements ActionListener {
         sizedFont = fontbold.deriveFont(20f);
         JLabel LabelPanel = new JLabel("NOPE");
         if (tab == 1) {
-            LabelPanel = new JLabel("Clientes");
+            LabelPanel = new JLabel("Finanzas");
             LabelPanel.setFont(sizedFont);
         } if (tab == 2) {
-            LabelPanel = new JLabel("Citas");
+            LabelPanel = new JLabel("Registros");
             LabelPanel.setFont(sizedFont);
         } if (tab == 3) {
-            LabelPanel = new JLabel("Trabajadores");
+            LabelPanel = new JLabel("Usuarios");
             LabelPanel.setFont(sizedFont);
         }
         mainpane.setLayout(new GridBagLayout());
