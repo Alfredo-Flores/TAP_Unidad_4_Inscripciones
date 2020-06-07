@@ -8,24 +8,36 @@ package Views;
 
 */
 
-import Model.Usuario;
+import Handlers.BCrypt;
+import Model.Conectar;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Login extends JFrame implements ActionListener {
 
     JFrame dashboard;
 
+    Conectar con = new Conectar();
+    Connection reg = con.conexion();
+
     JPanel LoginPanel = new JPanel();
     ImageIcon image = new ImageIcon(new ImageIcon("src/Views/assets/login_welcome.jpg").getImage().getScaledInstance(575, 480, Image.SCALE_SMOOTH));
-    ImageIcon imagebrand = new ImageIcon(new ImageIcon("src/Views/assets/brand.png").getImage().getScaledInstance(220, 75, Image.SCALE_SMOOTH));
-    Image imagetooth = new ImageIcon("src/Views/assets/logo.png").getImage();
+    ImageIcon imagebrand = new ImageIcon(new ImageIcon("src/Views/assets/brand.png").getImage().getScaledInstance(100, 75, Image.SCALE_SMOOTH));
+    Image imagetooth = new ImageIcon("src/Views/assets/brand.png").getImage();
     JLabel LabelTitulo = new JLabel(imagebrand);
     JLabel LabelImagen = new JLabel(image);
     JLabel LabelUser = new JLabel("Usuario: ");
@@ -110,6 +122,35 @@ public class Login extends JFrame implements ActionListener {
         setContentPane(LoginPanel);
     }
 
+    public void crearAdmin () {
+        UUID uuidobj = UUID.randomUUID();
+        String uuid = uuidobj.toString();
+
+        Calendar calendar = Calendar.getInstance();
+        java.util.Date now = calendar.getTime();
+        java.sql.Timestamp currentTimestamp = new java.sql.Timestamp(now.getTime());
+        String timestamp = currentTimestamp.toString();
+
+        String sql, username = "q@q.com", password = "admin";
+        password = BCrypt.hashpw(password, BCrypt.gensalt());
+
+        sql = "insert into users (uuid, username, password, created_at, updated_at ) values (?,?,?,?,?)";
+
+        try {
+            PreparedStatement ps = reg.prepareStatement(sql);
+            ps.setString(1, uuid);
+            ps.setString(2, username);
+            ps.setString(3, password);
+            ps.setString(4, timestamp);
+            ps.setString(5, timestamp);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registro Guardado");
+        } catch (SQLException er) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error");
+            er.printStackTrace();
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         Object Objecto = actionEvent.getSource();
@@ -132,146 +173,49 @@ public class Login extends JFrame implements ActionListener {
     }
 
     private void login() throws IOException, FontFormatException {
-
-            int response = this.attempLogin();
-
-            if (response == 1) {
-                this.dispose();
-                dashboard = new RecepcionistaView();
-            } else if (response == 2) {
-                this.dispose();
-                dashboard = new DuenoView();
-            } else {
-                JOptionPane.showMessageDialog(LoginPanel, "Estas credenciales no existen, intente de nuevo");
-            }
-
-    }
-
-    private void createRecepcionsita(String username, String password) {
-
-        // Info Usuario
-        Usuario nuevousuario;
-
-        HashMap<Integer, Usuario> usuarios = null;
-
-        try {
-            // En caso de que haya un archivo existente con usuario
-            FileInputStream filestream = new FileInputStream("usuarios.obj");
-            ObjectInputStream objectstream = new ObjectInputStream(filestream);
-            usuarios = (HashMap) objectstream.readObject();
-            objectstream.close();
-            filestream.close();
-
-            int id = usuarios.size() + 2;
-
-            nuevousuario = new Usuario(id, username, password, 0);
-
-            usuarios.put(id, nuevousuario);
-        } catch (Exception e) {
-            // En caso de que no exista archivo
-            usuarios = new HashMap<Integer, Usuario>();
-            nuevousuario = new Usuario(1, username, password, 0);
-            usuarios.put(1, nuevousuario);
-        }
-
-        // Sobreescribir / Escribir archivo
-        try {
-            File file = new File("usuarios.obj");
-            FileOutputStream fileStream = new FileOutputStream(file);
-            ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
-
-            objectStream.writeObject(usuarios);
-
-            fileStream.close();
-            objectStream.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(LoginPanel, "Ocurrio un error inesperado");
-            return;
+        boolean response = this.attempLogin();
+        if (response) {
+            this.dispose();
+            dashboard = new MainView();
+        } else {
+            JOptionPane.showMessageDialog(LoginPanel, "Estas credenciales no existen, intente de nuevo");
         }
     }
 
-    private void createDueno(String username, String password) {
-
-        // Info Usuario
-        Usuario nuevousuario;
-
-        HashMap<Integer, Usuario> usuarios = null;
-
-        try {
-            // En caso de que haya un archivo existente con usuario
-            FileInputStream filestream = new FileInputStream("usuarios.obj");
-            ObjectInputStream objectstream = new ObjectInputStream(filestream);
-            usuarios = (HashMap) objectstream.readObject();
-            objectstream.close();
-            filestream.close();
-
-            int id = usuarios.size() + 2;
-
-            nuevousuario = new Usuario(id, username, password, 1);
-
-            usuarios.put(id, nuevousuario);
-        } catch (Exception e) {
-            // En caso de que no exista archivo
-            usuarios = new HashMap<Integer, Usuario>();
-            nuevousuario = new Usuario(1, username, password, 1);
-            usuarios.put(0, nuevousuario);
-        }
-
-        // Sobreescribir / Escribir archivo
-        try {
-            File file = new File("usuarios.obj");
-            FileOutputStream fileStream = new FileOutputStream(file);
-            ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
-
-            objectStream.writeObject(usuarios);
-
-            fileStream.close();
-            objectStream.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(LoginPanel, "Ocurrio un error inesperado 1");
-            return;
-        }
-    }
-
-    private int attempLogin() {
+    private boolean attempLogin() {
         String username, password;
         char[] password_encrypted;
         try {
             username = this.FieldUser.getText();
         } catch (Exception error) {
-            JOptionPane.showMessageDialog(LoginPanel, "Escriba el usuario correctamente");
-            return 0;
+            JOptionPane.showMessageDialog(LoginPanel, "Escriba el correo correctamente");
+            return false;
         }
         try {
             password_encrypted = this.FieldPassword.getPassword();
             password = new String(password_encrypted);
         } catch (Exception error) {
             JOptionPane.showMessageDialog(LoginPanel, "Escriba la contraseña correctamente");
-            return 0;
+            return false;
         }
-        createDueno("root", "root");
-        createRecepcionsita("alfredo", "alfredo");
-        HashMap<Integer, Usuario> usuarios;
+
         try {
-            FileInputStream fis = new FileInputStream("usuarios.obj");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            usuarios = (HashMap) ois.readObject();
-            ois.close();
-            fis.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(LoginPanel, "Ocurrio un error inesperado, no existen usuario registrados");
-            return 0;
-        }
-        for (Map.Entry<Integer, Usuario> entry : usuarios.entrySet()) {
-            if (entry.getValue().getUsername().equals(username) && entry.getValue().getPassword().equals(password)) {
-                if (entry.getValue().getTipo() == 0) {
-                    return 1;
-                } else {
-                    return 2;
-                }
+            String query = "select username, password from users where username = '" + username + "' limit 1";
+
+            java.sql.ResultSet rs = reg.prepareStatement(query).executeQuery();
+            if (rs.next()) {
+                String sqlusername = rs.getString("username");
+                String sqlpassword = rs.getString("password");
+
+                return sqlusername.equals(username) && BCrypt.checkpw(password, sqlpassword);
+            } else {
+                return false;
             }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
-        return 0;
     }
 
     public static void main(String[] args) throws IOException, FontFormatException {
